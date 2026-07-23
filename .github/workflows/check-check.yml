@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      REFERENCE_REPO: intensive-front/l3ref
+      REFERENCE_REPO: intensive-front/l4ref
       # STRICT=true  -> максимально строго (кроме CRLF и BOM)
       # STRICT=false -> игнорировать пробелы в конце строк + пустые строки в конце файла
       STRICT: "false"
@@ -37,6 +37,8 @@ jobs:
           # СПИСОК 1 — обязательные файлы (ТОЛЬКО проверка наличия)
           # =====================================================
           FILES_REQUIRED=(
+            "scripts/track.js"
+            "scripts/order.js"
             "index.html"
             "track.html"
             "order.html"
@@ -72,11 +74,8 @@ jobs:
           # СПИСОК 2 — файлы для сравнения содержимого (diff)
           # =====================================================
           FILES_COMPARE=(
-            "styles/order.css"
-            "styles/order_adaptive.css"
-            "styles/track.css"
-            "styles/track_adaptive.css"
-            "index.html"
+            "scripts/order.js"
+            "scripts/track.js"
             "track.html"
             "order.html"
           )
